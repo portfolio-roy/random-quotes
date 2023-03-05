@@ -1,3 +1,4 @@
+$primary: rgb(5, 63, 63);
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -5,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: rgb(119, 39, 30);
+  background-color: $primary;
 }
 #wrapper {
   display: flex;
@@ -51,7 +52,7 @@ code {
   justify-content: space-between;
   margin-top: 20px;
   .button {
-    background-color: rgb(119, 39, 30);
+    background-color: $primary;
     float: left;
     padding: 8px;
     text-align: center;
@@ -62,6 +63,10 @@ code {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    transition: 500ms ease;
+    &:hover {
+      background-color: teal;
+    }
     &#tweet-quote {
       height: 40px;
       width: 40px;
