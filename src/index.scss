@@ -1,0 +1,76 @@
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(119, 39, 30);
+}
+#wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+}
+* {
+  box-sizing: border-box;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#quote-box {
+  border-radius: 3px;
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
+  display: table;
+  background-color: #fff;
+}
+
+.quote-text {
+  text-align: center;
+  height: auto;
+  clear: both;
+  font-weight: 500;
+  font-size: 1.75em;
+}
+
+#quote-box .quote-author {
+  height: auto;
+  clear: both;
+  padding-top: 20px;
+  font-size: 1em;
+  text-align: right;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  .button {
+    background-color: rgb(119, 39, 30);
+    float: left;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 5px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    &#tweet-quote {
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #quote-box {
+    max-width: 90%;
+  }
+}

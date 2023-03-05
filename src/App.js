@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Quote from './Quote';
+import SocialButtons from './SocialButtons';
+const App = () => {
+  const [quote, setQuote] = useState(null);
+  const fetchQuote = async () => {
+    const response = await fetch('https://api.quotable.io/random');
+    const data = await response.json();
+    setQuote(data);
+  };
+  useEffect(() => {
+    
+    fetchQuote();
+  }, []);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='quote-box'>
+      {quote && <Quote quote={quote} />}
+      <div className='buttons'>
+      {quote && <SocialButtons quote={quote} />}
+      <button className='button' id='new-quote' onClick={() => fetchQuote()}>New quote</button>
+      </div>
+      
     </div>
   );
-}
+};
 
 export default App;
